@@ -3,15 +3,32 @@ import { Link } from 'react-router-dom'
 import "./style/navbar.css"
 
 export default function Navbar() {
+  let [option, setOption]=React.useState([{link:"login",text:"Login"}, {link:"signup",text:"Signup"}])
+  React.useEffect(()=>{
+    
+    fetch("http://localhost:4000/api/userLoginStat", {
+      // Create fetch request to register user
+      method: "POST", // Set request method to POST to register user
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": localStorage.getItem("token")
+      },
+    }).then(response=>response.json()).then(data=>{
+      if(data.status==="ok"){
+        setOption([{link:"issue",text:"add an issue"},{link: "profile",text:"profile"}])
+      }
+    })
+  },[])
   return (
     <section className="navbar">
     <div className="container">
-        <h1 className="logo"><a href="index.html">Yugma</a></h1>
+        <h1 className="logo"><Link to="/">Yugma</Link></h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#my_skills">Add an issue</a></li>
-                <li><a href="#about_me">About us</a></li>
+                <li><Link to="/">Home</Link></li>
+                {option.map(item=>(
+                  <li><Link to={item.link}>{item.text}</Link></li>
+                ) )}
             </ul>
 
 

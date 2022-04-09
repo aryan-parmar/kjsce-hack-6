@@ -14,7 +14,7 @@ function Register() {
     // Create async function to handle async requests and prevent page refresh
     event.preventDefault(); // Prevent page refresh on submit button click
 
-    const response = await fetch("http://localhost:1337/api/register", {
+    const response = await fetch("http://localhost:4000/api/register", {
       // Create fetch request to register user
       method: "POST", // Set request method to POST to register user
       headers: {
@@ -32,7 +32,7 @@ function Register() {
 
     if (data.status === "ok") {
       // If the status is ok then the user is registered
-      history.push("/login"); // Redirect to login page
+      history("/login"); // Redirect to login page
     }
   }
 
@@ -66,7 +66,7 @@ function Register() {
     // 	</div>
 
     <div className="login-form">
-      <form>
+      <form onSubmit={registerUser}>
         <h1>Sign Up</h1>
 
         <div className="content">
@@ -99,7 +99,7 @@ function Register() {
           </div>
         </div>
         <div className="action">
-          <button>Sign Up</button>
+          <button type="submit">Sign Up</button>
         </div>
       </form>
     </div>
