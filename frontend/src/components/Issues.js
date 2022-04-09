@@ -8,10 +8,11 @@ export default function Issues() {
         // define loginUser function async to handle async requests and prevent page refresh
         event.preventDefault(); // prevent page refresh on submit button click
     
-        const response = await fetch("http://localhost:1337/api/addissue", {
+        const response = await fetch("http://localhost:4000/api/addissue", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "x-access-token": localStorage.getItem("token")
           },
           body: JSON.stringify({
             location,
