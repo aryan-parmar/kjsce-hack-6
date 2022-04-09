@@ -3,6 +3,7 @@ const app = express();                            // create an instance of expre
 const cors = require("cors");                    // Cross-Origin Resource Sharing
 const mongoose = require("mongoose");           // import mongoose
 const User = require("./models/userModel");   // import user model
+const Issue = require("./models/issueModel");   // import user model
 
 const jwt = require("jsonwebtoken");         // used to create, sign, and verify tokens
 const bcrypt = require("bcryptjs");         // bcrypt is used to hash passwords
@@ -17,12 +18,12 @@ app.use(express.json());             // enable json parsing for all requests
 mongoose.connect("mongodb://localhost:27017/Yugma");   // connect to mongoDB database
 
 app.post("/api/register", async (req, res) => {
-                                                    // register a new user
+  // register a new user
   console.log(req.body);                           // log the request body
   try {
     const newPassword = await bcrypt.hash(req.body.password, 10);   // hash the password
     await User.create({
-                                                                   // create a new user
+      // create a new user
       name: req.body.name,
       email: req.body.email,
       password: newPassword,
@@ -67,7 +68,25 @@ app.post("/api/login", async (req, res) => {
     return res.json({ status: "error", user: false }); // send an error response with status error and user false
   }
 });
+app.post("/api/search",async(req,res)=>{
+  let search = req.body.location
+  
+})
+app.post("/api/addissue", async(req,res)=>{
+  const token = req.headers['x-access-token']
+
+	try {
+		const decoded = jwt.verify(token, 'secret123')
+		const email = decoded.email
+		const user = await User.findOne({ email: email })
+
+		return res.json({ status: 'ok', quote: user.quote })
+	} catch (error) {
+		console.log(error)
+		res.json({ status: 'error', error: 'invalid token' })
+	}
+})
 app.listen(4000, () => {                                                 // listen on port 4000
   console.log("Server started on 4000");                                // log that the server started
 });                                                                    // end listen    
-                                                                       
+
