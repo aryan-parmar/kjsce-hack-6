@@ -10,6 +10,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Map from "./components/Map";
 import Navbar from './components/Navbar';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -18,8 +19,8 @@ function App() {
     <Navbar/>
       <Routes>
         <Route path="/" element={<Map />} />
-        {/* <Route path="login" element={<Login />} />
-        <Route path="issue" element={<Issue />} />
+        <Route path="login" element={<Login />} />
+        {/* <Route path="issue" element={<Issue />} />
         <Route path="signup" element={<Register/>} /> */}
         <Route path="/*" element={<h1>404</h1>} />
       </Routes>

@@ -27,12 +27,12 @@ export default function Navbar() {
       </ul>
       <ul>
         <li>
-          <Link to="#signup">
+          <Link to="signup">
             Sign-up
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link to="login">
             Login
           </Link>
         </li>
