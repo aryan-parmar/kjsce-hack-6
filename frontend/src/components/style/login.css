@@ -5,7 +5,7 @@
     -webkit-font-smoothing: antialiased;
   }
   
-  body {
+  .body {
     background: url(heatmap.png);
     font-family: 'Rubik', sans-serif;
   }

@@ -1,23 +1,24 @@
 import React from 'react'
-
+import "./style/issue.css"
 export default function Issues() {
     return (
-        <div class="wrapper">
+        <div className="wrapper-issue">
             <form action="">
+                <h1>Add an issue</h1>
                 <div id="wizard">
-                    <h4></h4>
                     <section>
-                        <div class="form-row"> <input type="text" class="form-control" placeholder="country" /> </div>
-                        <div class="form-row"> <input type="text" class="form-control" placeholder="Streest adress" /> </div>
-                        <div class="form-row"> <input type="text" class="form-control" placeholder="Issue Heading" /> </div>
+                        <div className="form-row"> <input type="text" className="form-control" placeholder="Location" /> </div>
+                        <div className="form-row"> <input type="text" className="form-control" placeholder="Issue" /> </div>
                     </section>
-                    <h4></h4>
                     <section>
-                        <div class="form-row" style="margin-bottom: 18px"> <textarea name="" id="" class="form-control" placeholder="Issue" style="height: 108px"></textarea> </div>
-                        <input type="checkbox" />
-                        <label for="Anonymous"> Anonymous</label>
+                        <div className="form-row"> <textarea name="" id="" className="form-control" placeholder="Issue Description"></textarea> </div>
+                        <div className='checkBox'>
+                            <label htmlFor="Anonymous">Anonymous</label>
+                            <input id="Anonymous" type="checkbox" />
+                        </div>
                     </section>
                 </div>
+                <button>Add</button>
             </form>
         </div >
     )

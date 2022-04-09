@@ -1,0 +1,55 @@
+.wrapper-issue{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    background: url(heatmap.png);
+}
+.wrapper-issue form{
+    background-color: white;
+    /* padding: 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+    margin: 30px 0;
+}
+.wrapper-issue form input, .wrapper-issue form textarea{
+    font-size: 16px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    width: fit-content;
+    padding: 10px ;
+    border: 0;
+    border-bottom: 1px solid #747474;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    margin: 10px;
+}
+.wrapper-issue form h1{
+    margin: 10px 25px;
+    text-transform:uppercase;
+}
+.wrapper-issue button{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    background-color: #3c4d6d;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+}
+#wizard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
