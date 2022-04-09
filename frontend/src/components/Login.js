@@ -53,4 +53,4 @@ function Login() {                                             // define Login c
 	)
 }
 
-export default App                                            // export App component to use it in other components in this project
+export default Login                                           // export App component to use it in other components in this project
