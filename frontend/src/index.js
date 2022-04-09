@@ -9,12 +9,13 @@ import {
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Map from "./components/Map";
+import Navbar from './components/Navbar';
 
 function App() {
   return (
 
     <BrowserRouter>
-    {/* <Navbar/> */}
+    <Navbar/>
       <Routes>
         <Route path="/" element={<Map />} />
         {/* <Route path="login" element={<Login />} />
