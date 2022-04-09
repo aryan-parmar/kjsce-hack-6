@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import Map from "./components/Map";
 import Navbar from './components/Navbar';
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Map />} />
         <Route path="login" element={<Login />} />
-        {/* <Route path="issue" element={<Issue />} />
-        <Route path="signup" element={<Register/>} /> */}
+        {/* { <Route path="issue" element={<Issue />} /> */}
+        <Route path="signup" element={<Register/>} /> 
         <Route path="/*" element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>
