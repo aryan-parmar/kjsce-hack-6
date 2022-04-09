@@ -36,7 +36,7 @@ export default function Map() {
                 />
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png"
+                    url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.pn"
                     minZoom={1}
                     maxZoom={12}
                 />
