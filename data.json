@@ -41,13 +41,13 @@
     },
     {
         "name": "sion ",
-        "location":[ 19.0269, 72.8553 ],
+        "location":[ 19.0390, 72.8619 ],
         "issue":0
 
     },
     {
         "name": "matunga ",
-        "location":[ 19.0390, 72.8619 ],
+        "location":[ 19.0269, 72.8553 ],
         "issue":0
 
     },
@@ -58,82 +58,227 @@
 
     },
     {
-        "name": "vile parle ",
-        "location":[ 19.0836, 72.8909 ],
+        "name":" vidyavihar ",
+        "location":[19.0798, 72.8973 ],
         "issue":0
-
     },
     {
-        "name": "andheri ",
-        "location":[ 19.0937, 72.8979 ],
+        "name":"ghatkopar  ",
+        "location":[19.0790,72.9080],
         "issue":0
-
     },
     {
-        "name": "borivali ",
-        "location":[ 19.1038, 72.9049 ],
+        "name":"vikhroli  ",
+        "location":[19.1142, 72.9358],
         "issue":0
-
     },
     {
-        "name": "bandra ",
-        "location":[ 19.1139, 72.9120 ],
+        "name":"kanjurmarg ",
+        "location":[19.1294, 72.9330],
         "issue":0
-
     },
     {
-        "name": "jogeshwari ",
-        "location":[ 19.1239, 72.9190 ],
+        "name":"bhandup ",
+        "location":[19.1511, 72.9372],
         "issue":0
-
     },
     {
-        "name": "goregaon ",
-        "location":[ 19.1339, 72.9261 ],
+        "name":"nahur",
+        "location":[19.1553, 72.9438],
         "issue":0
-
     },
     {
-        "name": "malad ",
-        "location":[ 19.1439, 72.9330 ],
+        "name":"mulund",
+        "location":[19.1765, 72.9475],
         "issue":0
-
     },
     {
-        "name": "khar road ",
-        "location":[ 19.1539, 72.9391 ],
+        "name":"thane ",
+        "location":[19.2183, 72.9781],
         "issue":0
-
     },
     {
-        "name": "borivali (w)",
-        "location":[ 19.1639, 72.9461 ],
+        "name":"kalwa  ",
+        "location":[19.2022, 73.0025],
         "issue":0
-
     },
     {
-        "name": "borivali (e)",
-        "location":[ 19.1739, 72.9530 ],
+        "name":"mumbra ",
+        "location":[19.1761, 73.0229],
         "issue":0
-
     },
     {
-        "name": "kandivali ",
-        "location":[ 19.1839, 72.9591 ],
+        "name":"diva  ",
+        "location":[19.1869, 73.0478],
         "issue":0
-
     },
     {
-        "name": "mira road ",
-        "location":[ 19.1939, 72.9661 ],
+        "name":"kopar  ",
+        "location":[19.2546, 73.0206],
         "issue":0
-
     },
     {
-        "name": "virar ",
-        "location":[ 19.2039, 72.9730 ],
+        "name":"dombivli  ",
+        "location":[19.2094, 73.0939],
         "issue":0
+    },
 
-    }
+
+
+
+
+
+
+
+
     
+    {
+        "name":"churchgate  ",
+        "location":[18.9322, 72.8264],
+        "issue":0
+    },
+    {
+        "name":"marine lines  ",
+        "location":[18.9431, 72.8272],
+        "issue":0
+    },
+    {
+        "name":" charni road ",
+        "location":[18.9518, 72.8184],
+        "issue":0
+    },
+    
+    {
+        "name":" grant road ",
+        "location":[18.9630, 72.8176],
+        "issue":0
+    },
+
+    {
+        "name":"mumbai central  ",
+        "location":[18.9690, 72.8205],
+        "issue":0
+    },
+
+    {
+        "name":"mahalaxmi  ",
+        "location":[18.9865, 72.8183],
+        "issue":0
+    },
+
+    {
+        "name":"lower parel  ",
+        "location":[18.9977, 72.8376],
+        "issue":0
+    },
+
+    {
+        "name":" prabhadevi ",
+        "location":[19.0163, 72.8291],
+        "issue":0
+    },
+
+
+    {
+        "name":" dadar ",
+        "location":[19.0178, 72.8478],
+        "issue":0
+    },
+
+
+    {
+        "name":" matunga road ",
+        "location":[19.0269, 72.8553],
+        "issue":0
+    },
+
+    {
+        "name":"mahim  ",
+        "location":[19.0354, 72.8423],
+        "issue":0
+    },
+
+    {
+        "name":"bandra  ",
+        "location":[19.0596, 72.8295],
+        "issue":0
+    },
+
+    {
+        "name":"khar road  ",
+        "location":[19.0700, 72.8338],
+        "issue":0
+    },
+
+    {
+        "name":"santacruz  ",
+        "location":[19.0843, 72.8360],
+        "issue":0
+    },
+
+    {
+        "name":" vile parle ",
+        "location":[19.0968, 72.8517],
+        "issue":0
+    },
+
+    {
+        "name":" andheri ",
+        "location":[19.1136, 72.8697],
+        "issue":0
+    },
+
+    {
+        "name":" jogeshwari ",
+        "location":[19.1439, 72.8428],
+        "issue":0
+    },
+
+    {
+        "name":"ram mandir  ",
+        "location":[19.1514, 72.8507],
+        "issue":0
+    },
+
+    {
+        "name":"goregaon  ",
+        "location":[19.1663, 72.8526],
+        "issue":0
+    },
+
+    {
+        "name":" malad ",
+        "location":[19.1874, 72.8484],
+        "issue":0
+    },
+
+    {
+        "name":" kandivali ",
+        "location":[19.2029, 72.8518],
+        "issue":0
+    },
+
+    {
+        "name":" borivali ",
+        "location":[19.2307, 72.8567],
+        "issue":0
+    },
+
+    {
+        "name":" dahisar ",
+        "location":[19.2494, 72.8596],
+        "issue":0
+    },
+
+    {
+        "name":"mira road  ",
+        "location":[19.2856, 72.8691],
+        "issue":0
+    },
+
+    {
+        "name":" bhayandar ",
+        "location":[19.2990, 72.8548],
+        "issue":0
+    }
 ]

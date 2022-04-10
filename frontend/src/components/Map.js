@@ -3,7 +3,6 @@ import { Map as LeafletMap, TileLayer, Marker, Popup } from "react-leaflet";
 import * as L from "leaflet";
 import "../../node_modules/leaflet/dist/leaflet.css";
 import HeatmapLayer from "react-leaflet-heatmap-layer";
-import { geojson } from "./atd";
 
 const maxBounds = L.latLngBounds(
     L.latLng(6.0, 69.0),
@@ -31,7 +30,7 @@ export default function Map() {
                 zoomControl={true}
                 trackResize={true}
                 maxBounds={maxBounds}
-                maxZoom={12}
+                maxZoom={15}
                 minZoom={4.9}
             >
                 <HeatmapLayer
@@ -40,9 +39,9 @@ export default function Map() {
                     latitudeExtractor={(m) => m.location[0]}
                     intensityExtractor={(m) => m["issue"]}
                     // minOpacity={0}
-                    maxZoom={12}
+                    maxZoom={15}
                     minZoom={4.9}
-                    radius={15}
+                    radius={30}
                     blur={10}
                     max={5}
                     min={0}
@@ -51,7 +50,7 @@ export default function Map() {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png"
                     minZoom={1}
-                    maxZoom={12}
+                    maxZoom={15}
                 />
             </LeafletMap>
         </div>
