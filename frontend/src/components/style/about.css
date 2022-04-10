@@ -1,0 +1,23 @@
+.about-container{
+    background: #fff;
+    max-width: 350px;
+    margin: 0px auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    flex-direction: column;
+}
+.about-container p{
+    font-size: 24px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}

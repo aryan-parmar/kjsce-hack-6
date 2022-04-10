@@ -1,4 +1,4 @@
-import { useState } from "react"; // Import useState hook
+import React,{ useState } from "react"; // Import useState hook
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook from react-router-dom to redirect to login page
 import "./style/Register.css"; // Import Register.css file
 
@@ -9,7 +9,22 @@ function Register() {
   const [name, setName] = useState(""); // Create state variables for name and email
   const [email, setEmail] = useState(""); // Create state variables for password and confirm password
   const [password, setPassword] = useState(""); // Create state variables for password and confirm password
-
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetch("http://localhost:4000/api/userLoginStat", {
+        // Create fetch request to register user
+        method: "POST", // Set request method to POST to register user
+        headers: {
+          "Content-Type": "application/json",
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }).then((data) => {
+        console.log(data.json());
+      });
+      history("/");
+    }
+  });
   async function registerUser(event) {
     // Create async function to handle async requests and prevent page refresh
     event.preventDefault(); // Prevent page refresh on submit button click
@@ -37,71 +52,45 @@ function Register() {
   }
 
   return (
-    // 	<div>
-    // 		<h1>Register</h1>
-    // 		<form onSubmit={registerUser}>
-    // 			<input
-    // 				value={name}
-    // 				onChange={(e) => setName(e.target.value)}
-    // 				type="text"
-    // 				placeholder="Name"
-    // 			/>
-    // 			<br />
-    // 			<input
-    // 				value={email}
-    // 				onChange={(e) => setEmail(e.target.value)}
-    // 				type="email"
-    // 				placeholder="Email"
-    // 			/>
-    // 			<br />
-    // 			<input
-    // 				value={password}
-    // 				onChange={(e) => setPassword(e.target.value)}
-    // 				type="password"
-    // 				placeholder="Password"
-    // 			/>
-    // 			<br />
-    // 			<input type="submit" value="Register" />
-    // 		</form>
-    // 	</div>
+    <div className="body">
+      <div className="login-form">
+        <form onSubmit={registerUser}>
+          <h1>Sign Up</h1>
 
-    <div className="login-form">
-      <form onSubmit={registerUser}>
-        <h1>Sign Up</h1>
-
-        <div className="content">
-          <div className="input-field">
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
-            />
+          <div className="content">
+            <div className="input-field">
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+              />
+            </div>
+            <div className="input-field">
+              <input
+                type="email"
+                placeholder="Email"
+                autocomplete="nope"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                type="password"
+                placeholder="Password"
+                autocomplete="new-password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="input-field">
-            <input
-              type="email"
-              placeholder="Email"
-              autocomplete="nope"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          <div className="action">
+            <button type="submit">Sign Up</button>
           </div>
-          <div className="input-field">
-            <input
-              type="password"
-              placeholder="Password"
-              autocomplete="new-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="action">
-          <button type="submit">Sign Up</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

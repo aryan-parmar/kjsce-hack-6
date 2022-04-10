@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Issues from "./components/Issues";
+import About from "./components/About";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="issue" element={<Issues />} />
         <Route path="signup" element={<Register />} />
-        <Route path="about" element={<Register />} />
+        <Route path="about" element={<About />} />
         <Route path="/*" element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>

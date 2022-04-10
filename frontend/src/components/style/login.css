@@ -8,13 +8,13 @@
   .body {
     background: url(heatmap.png);
     font-family: 'Rubik', sans-serif;
+    padding-top: 100px;
   }
   
   .login-form {
-    background: rgb(255, 255, 255);
-    width: 500px;
-    margin: 65px auto;
-    margin-top: 150px;
+    background: #fff;
+    width: 400px;
+    margin: 0px auto;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
