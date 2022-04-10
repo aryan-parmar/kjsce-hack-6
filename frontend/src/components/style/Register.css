@@ -8,13 +8,21 @@
   .body {
     background: url(heatmap.png);
     font-family: 'Rubik', sans-serif;
+    padding-top: 100px;
+    height: 90%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    max-height:50em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .login-form {
     background: #fff;
-    width: 400px;
-    margin: 65px auto;
-    margin-top: 150px;
+    max-width: 350px;
+    margin: 0px auto;
     display: -webkit-box;
     display: flex;
     -webkit-box-orient: vertical;
@@ -22,6 +30,7 @@
             flex-direction: column;
     border-radius: 4px;
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
   }
   .login-form h1 {
     padding: 35px 35px 0 35px;
@@ -34,6 +43,9 @@
   }
   .login-form .input-field {
     padding: 12px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .login-form .input-field input {
     font-size: 16px;
@@ -95,6 +107,8 @@
     outline: 0;
     -webkit-transition: all .3s;
     transition: all .3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   .login-form .action button:hover {
     background: #d8d8d8;

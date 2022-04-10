@@ -5,18 +5,13 @@ const mongoose = require("mongoose"); // import mongoose
 const User = require("./models/userModel"); // import user model
 const Issue = require("./models/issueModel"); // import user model
 const Geolocation = require("./models/geolocation"); // import user model
-
 const jwt = require("jsonwebtoken"); // used to create, sign, and verify tokens
 const bcrypt = require("bcryptjs"); // bcrypt is used to hash passwords
-
 mongoose.set("useNewUrlParser", true); // set mongoose to use new parser instead of deprecated parser
 mongoose.set("useFindAndModify", false); // set mongoose to not use the findAndModify function
 mongoose.set("useCreateIndex", true); // set mongoose to use createIndex instead of deprecated ensureIndex
-// mongoose.set("useUnifiedTopology", true); // set mongoose to use new server topology
-
 app.use(cors()); // enable CORS for all requests
 app.use(express.json()); // enable json parsing for all requests
-
 mongoose.connect("mongodb://localhost:27017/Yugma"); // connect to mongoDB database
 
 app.post("/api/register", async (req, res) => {
@@ -32,8 +27,6 @@ app.post("/api/register", async (req, res) => {
     });
     res.json({ status: "ok" }); // send a response with status ok
   } catch (err) {
-    // catch any errors
-    console.log(err); // log the error
     res.json({ status: "error", error: "Duplicate email" }); // send a response with status error and error message
   }
 });
@@ -66,7 +59,6 @@ app.post("/api/login", async (req, res) => {
       },
       "secret123" // with a secret
     );
-
     return res.json({ status: "ok", user: token }); // send a response with status ok and the token
   } else {
     return res.json({ status: "error", user: false }); // send an error response with status error and user false
@@ -83,7 +75,6 @@ app.post("/api/userLoginStat", async (req, res) => {
     a["name"] = user.name;
     res.json({ status: "ok", user: a });
   } catch (error) {
-    console.log(error);
     res.json({ status: "error", error: "invalid token" });
   }
 });
@@ -98,7 +89,6 @@ app.post("/api/search", async (req, res) => {
 });
 app.post("/api/addissue", async (req, res) => {
   const token = req.headers["x-access-token"];
-
   try {
     const decoded = jwt.verify(token, "secret123");
     const email = decoded.email;
@@ -135,10 +125,8 @@ app.post("/api/addissue", async (req, res) => {
 });
 app.post("/api/getlocation", async (req, res) => {
   const location = await Geolocation.find({});
-  console.log(location);
   return res.json({ status: "ok", data: location });
 });
-app.listen(4000, () => {
-  // listen on port 4000
-  console.log("Server started on 4000"); // log that the server started
-}); // end listen
+app.listen(4000, () => {// listen on port 4000
+  console.log("Server started on 4000");
+});

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./style/issue.css";
 export default function Issues() {
   const [location, setLocation] = useState("");
@@ -59,31 +59,88 @@ export default function Issues() {
     console.log(data);
     setSelect(data.locations);
   }
-  console.log(anonymous)
+  console.log(anonymous);
   return (
-    <div className="wrapper-issue">
-      <form onSubmit={submitIssue}>
-        <h1>Add an issue</h1>
-        <div id="wizard">
-          <section>
-            <div className="form-row">
+    // <div className="wrapper-issue">
+    //   <form onSubmit={submitIssue}>
+    //     <h1>Add an issue</h1>
+    //     <div id="wizard">
+    //       <section>
+    //         <div className="form-row">
+    //           <input
+    //             type="text"
+    //             className="form-control"
+    //             placeholder="Location"
+    //             value={location}
+    //             onChange={(e) => searchLocation(e)}
+    //             list="locations" id="location" name="location"
+    //           />
+    //           {select.length === 0? <></>:
+    //           <datalist id="locations">
+    //             {select.map((item) => (
+    //               <option value={item.name} placeholder="hello"/>
+    //               ))}
+    //           </datalist>
+    //             }
+    //         </div>
+    //         <div className="form-row">
+    //           <input
+    //             type="text"
+    //             className="form-control"
+    //             placeholder="Issue"
+    //             value={issue}
+    //             onChange={(e) => setIssue(e.target.value)}
+    //           />
+    //         </div>
+    //       </section>
+    //       <section>
+    //         <div className="form-row">
+    //           <textarea
+    //             name=""
+    //             id=""
+    //             className="form-control"
+    //             placeholder="Issue Description"
+    //             value={issueDesc}
+    //             onChange={(e) => setIssueDesc(e.target.value)}
+    //           ></textarea>
+    //         </div>
+    //         <div className="checkBox">
+    //           <label htmlFor="Anonymous">Anonymous</label>
+    //           <input id="Anonymous" type="checkbox" value={anonymous}
+    //             onChange={(e) => setAnonymous(e.target.checked)}/>
+    //         </div>
+    //       </section>
+    //     </div>
+    //     <button type="submit">Add</button>
+    //   </form>
+    // </div>
+    <div className="body">
+      <div className="login-form">
+        <form onSubmit={submitIssue}>
+          <h1>Add an issue</h1>
+          <div className="content">
+            <div className="input-field">
               <input
                 type="text"
                 className="form-control"
                 placeholder="Location"
                 value={location}
                 onChange={(e) => searchLocation(e)}
-                list="locations" id="location" name="location"
+                list="locations"
+                id="location"
+                name="location"
               />
-              {select.length === 0? <></>:
-              <datalist id="locations">
-                {select.map((item) => (
-                  <option value={item.name} placeholder="hello"/>
+              {select.length === 0 ? (
+                <></>
+              ) : (
+                <datalist id="locations">
+                  {select.map((item) => (
+                    <option value={item.name} placeholder="hello" />
                   ))}
-              </datalist>
-                }
+                </datalist>
+              )}
             </div>
-            <div className="form-row">
+            <div className="input-field">
               <input
                 type="text"
                 className="form-control"
@@ -92,9 +149,7 @@ export default function Issues() {
                 onChange={(e) => setIssue(e.target.value)}
               />
             </div>
-          </section>
-          <section>
-            <div className="form-row">
+            <div className="input-field">
               <textarea
                 name=""
                 id=""
@@ -104,15 +159,21 @@ export default function Issues() {
                 onChange={(e) => setIssueDesc(e.target.value)}
               ></textarea>
             </div>
-            <div className="checkBox">
+            <div className="input-field">
               <label htmlFor="Anonymous">Anonymous</label>
-              <input id="Anonymous" type="checkbox" value={anonymous}
-                onChange={(e) => setAnonymous(e.target.checked)}/>
+              <input
+                id="Anonymous"
+                type="checkbox"
+                value={anonymous}
+                onChange={(e) => setAnonymous(e.target.checked)}
+              />
             </div>
-          </section>
-        </div>
-        <button type="submit">Add</button>
-      </form>
+          </div>
+          <div className="action">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
