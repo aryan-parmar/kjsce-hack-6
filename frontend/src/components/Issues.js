@@ -170,7 +170,7 @@ export default function Issues() {
             </div>
           </div>
           <div className="action">
-            <button type="submit">Login</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
