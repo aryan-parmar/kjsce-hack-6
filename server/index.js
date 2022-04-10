@@ -4,6 +4,7 @@ const cors = require("cors"); // Cross-Origin Resource Sharing
 const mongoose = require("mongoose"); // import mongoose
 const User = require("./models/userModel"); // import user model
 const Issue = require("./models/issueModel"); // import user model
+const Geolocation = require("./models/geolocation"); // import user model
 
 const jwt = require("jsonwebtoken"); // used to create, sign, and verify tokens
 const bcrypt = require("bcryptjs"); // bcrypt is used to hash passwords
@@ -80,7 +81,6 @@ app.post("/api/userLoginStat", async (req, res) => {
     const user = await User.findOne({ email: email });
     a["email"] = user.email;
     a["name"] = user.name;
-    console.log(a);
     res.json({ status: "ok", user: a });
   } catch (error) {
     console.log(error);
@@ -88,20 +88,13 @@ app.post("/api/userLoginStat", async (req, res) => {
   }
 });
 app.post("/api/search", async (req, res) => {
-  let search = req.body.location;
-  const token = req.headers["x-access-token"];
-  try {
-    const decoded = jwt.verify(token, "secret123");
-    const email = decoded.email;
-    a = { email: "", name: "" };
-    const user = await User.findOne({ email: email });
-    a["email"] = user.email;
-    a["name"] = user.name;
-    return res.json({ status: "ok", user: a });
-  } catch (error) {
-    console.log(error);
-    res.json({ status: "error", error: "invalid token" });
-  }
+  let search = req.body.value;
+  console.log(search);
+  const locations = await Geolocation.find({
+    name: { $regex: "^" + req.body.value.toLowerCase() },
+  });
+  console.log(locations);
+  res.json({ status: "ok", locations: locations });
 });
 app.post("/api/addissue", async (req, res) => {
   const token = req.headers["x-access-token"];
@@ -110,12 +103,40 @@ app.post("/api/addissue", async (req, res) => {
     const decoded = jwt.verify(token, "secret123");
     const email = decoded.email;
     const user = await User.findOne({ email: email });
-
-    return res.json({ status: "ok", quote: user.quote });
+    let location = req.body.location;
+    let issue = req.body.issue;
+    let issueDesc = req.body.issueDesc;
+    let anonymous = req.body.anonymous;
+    console.log(location, issue, issueDesc, anonymous);
+    Geolocation.findOne({ name: location }, (err, location) => {
+      if (err) {
+        console.log(err);
+      }
+      if (location) {
+        console.log(location);
+        Issue.create({
+          location: location._id,
+          issue: issue,
+          issueDesc: issueDesc,
+          user: user._id,
+          anonymous: anonymous,
+        });
+        location.issue = location.issue+ 1
+        location.save();
+        res.json({ status: "ok" });
+      } else {
+        res.json({ status: "error", error: "Location not found" });
+      }
+    })
   } catch (error) {
     console.log(error);
     res.json({ status: "error", error: "invalid token" });
   }
+});
+app.post("/api/getlocation", async (req, res) => {
+  const location = await Geolocation.find({});
+  console.log(location);
+  return res.json({ status: "ok", data: location });
 });
 app.listen(4000, () => {
   // listen on port 4000

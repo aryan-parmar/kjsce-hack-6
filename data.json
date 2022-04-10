@@ -1,0 +1,139 @@
+[
+    {
+        "name": "masjid bandar",
+        "location":[18.9506, 72.838],
+        "issue":0
+    },
+    {
+        "name": "sandhurst road",
+        "location":[18.9609, 72.8394],
+        "issue":0
+    },
+    {
+        "name": "byculla ",
+        "location":[18.9750,72.8295  ],
+        "issue":0
+
+    },
+    {
+        "name": "chinchpokhli  ",
+        "location":[ 18.9854, 72.8346 ],
+        "issue":0
+
+    },
+    {
+        "name": "currey road ",
+        "location":[18.9944, 72.8329 ],
+        "issue":0
+
+    },
+    {
+        "name": "parel ",
+        "location":[ 18.9977 , 72.8376 ],
+        "issue":0
+
+    },
+    {
+        "name": "dadar ",
+        "location":[ 19.0178, 72.8478 ],
+        "issue":0
+
+    },
+    {
+        "name": "sion ",
+        "location":[ 19.0269, 72.8553 ],
+        "issue":0
+
+    },
+    {
+        "name": "matunga ",
+        "location":[ 19.0390, 72.8619 ],
+        "issue":0
+
+    },
+    {
+        "name": "kurla ",
+        "location":[19.0726, 72.8845  ],
+        "issue":0
+
+    },
+    {
+        "name": "vile parle ",
+        "location":[ 19.0836, 72.8909 ],
+        "issue":0
+
+    },
+    {
+        "name": "andheri ",
+        "location":[ 19.0937, 72.8979 ],
+        "issue":0
+
+    },
+    {
+        "name": "borivali ",
+        "location":[ 19.1038, 72.9049 ],
+        "issue":0
+
+    },
+    {
+        "name": "bandra ",
+        "location":[ 19.1139, 72.9120 ],
+        "issue":0
+
+    },
+    {
+        "name": "jogeshwari ",
+        "location":[ 19.1239, 72.9190 ],
+        "issue":0
+
+    },
+    {
+        "name": "goregaon ",
+        "location":[ 19.1339, 72.9261 ],
+        "issue":0
+
+    },
+    {
+        "name": "malad ",
+        "location":[ 19.1439, 72.9330 ],
+        "issue":0
+
+    },
+    {
+        "name": "khar road ",
+        "location":[ 19.1539, 72.9391 ],
+        "issue":0
+
+    },
+    {
+        "name": "borivali (w)",
+        "location":[ 19.1639, 72.9461 ],
+        "issue":0
+
+    },
+    {
+        "name": "borivali (e)",
+        "location":[ 19.1739, 72.9530 ],
+        "issue":0
+
+    },
+    {
+        "name": "kandivali ",
+        "location":[ 19.1839, 72.9591 ],
+        "issue":0
+
+    },
+    {
+        "name": "mira road ",
+        "location":[ 19.1939, 72.9661 ],
+        "issue":0
+
+    },
+    {
+        "name": "virar ",
+        "location":[ 19.2039, 72.9730 ],
+        "issue":0
+
+    }
+    
+]
