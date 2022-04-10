@@ -1,22 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import reportWebVitals from "./reportWebVitals";
 import Map from "./components/Map";
-import Navbar from './components/Navbar';
-import Login from './components/Login';
-import Register from './components/Register';
-import Issues from './components/Issues';
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Issues from "./components/Issues";
 
 function App() {
   return (
-
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -24,10 +19,11 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="issue" element={<Issues />} />
         <Route path="signup" element={<Register />} />
+        <Route path="about" element={<Register />} />
         <Route path="/*" element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 const rootElement = document.getElementById("root");

@@ -41,8 +41,7 @@ function Login() {
 
     if (data.user) {
       localStorage.setItem("token", data.user); // set the token in local storage with the data.user
-      alert("Login successful"); // alert the user that login is successful
-      window.location.href = "/dashboard"; // redirect the user to dashboard
+      history("/"); // redirect the user to dashboard
     } else {
       // if the user is not found
       alert("Please check your username and password"); // alert the user that login is unsuccessful
